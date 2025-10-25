@@ -40,8 +40,9 @@ dependencies {
     androidTestImplementation libs.espresso.core
 
     // ✅ Firebase + Google Sign-In
-    implementation 'com.google.firebase:firebase-auth:23.1.0'
-    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    implementation 'com.google.firebase:firebase-auth:24.0.1'
+    implementation 'com.google.android.gms:play-services-auth:21.4.0'
+
 }
 
 // ✅ Add this line at the END
