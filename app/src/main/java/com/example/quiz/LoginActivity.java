@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 100;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
-    private SignInButton btnGoogleSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         // Initialize UI elements
-        btnGoogleSignIn = findViewById(R.id.btnGoogleSignIn);
+        SignInButton btnGoogleSignIn = findViewById(R.id.btnGoogleSignIn);
 
         btnGoogleSignIn.setOnClickListener(v -> signInWithGoogle());
     }
@@ -92,8 +91,6 @@ public class LoginActivity extends AppCompatActivity {
                         if (user != null) {
                             Toast.makeText(this, "Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                             // Go to next screen if needed:
-                            // startActivity(new Intent(this, MainActivity.class));
-                            // finish();
                         }
                     } else {
                         Toast.makeText(this, "Authentication failed!", Toast.LENGTH_SHORT).show();
